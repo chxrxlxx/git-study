@@ -1,0 +1,74 @@
+#begin
+git init: Git Bash 창이 실행되고 있는 내 컴퓨터의 경로를 출력 > 명령어 실행 시 .git폴더가 생성되고 이 폴더에서 버전관리 가능
+
+#log-in
+$ git config --global user.email "cofl2245@naver.com"
+$ git config --global user.name "chxrxlxx"
+
+#command
+add: 명령어를 선택
+  $git add test.txt
+  
+commit: 커밋(버전)을 선택
+
+
+첫번째 커밋을 선택
+  USER@DESKTOP-FIM6H62 MINGW64 ~/github (master)
+  $ git commit -m "안녕하세요"
+  [master (root-commit) 305898a] 안녕하세요
+  1 file changed, 1 insertion(+)
+  create mode 100644 test.txt
+
+
+파일 수정 후 두번째 커밋을 선택
+  USER@DESKTOP-FIM6H62 MINGW64 ~/github (master)
+  $ git add test.txt
+
+  USER@DESKTOP-FIM6H62 MINGW64 ~/github (master)
+  $ git commit -m "안녕하세요"
+  [master d11d9ff] 안녕하세요
+  1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+log: 변경 로그 출력
+  USER@DESKTOP-FIM6H62 MINGW64 ~/github (master)
+  $ git log
+  commit d11d9ffb2326372b18af78c0f29be57b0b06b85b (HEAD -> master)
+  Author: chxrxlxx <cofl2245@naver.com>
+  Date:   Thu Mar 23 14:44:06 2023 +0900
+
+      안녕하세요
+
+  commit 305898a3c7f2554cfffa19e34201df101e82274b
+  Author: chxrxlxx <cofl2245@naver.com>
+  Date:   Thu Mar 23 14:40:55 2023 +0900
+
+      안녕하세요
+
+
+checkout: 커밋을 변경
+
+먼저 작성된 commit (305898a~)를 checkout하여 첫번째 커밋으로 돌아가는 방법
+  USER@DESKTOP-FIM6H62 MINGW64 ~/github (master)
+  $ git checkout 305898a
+  Note: switching to '305898a'.
+
+  You are in 'detached HEAD' state. You can look around, make experimental
+  changes and commit them, and you can discard any commits you make in this
+  state without impacting any branches by switching back to a branch.
+
+  If you want to create a new branch to retain commits you create, you may
+  do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+  Or undo this operation with:
+
+  git switch -
+
+  Turn off this advice by setting config variable advice.detachedHead to false
+
+  HEAD is now at 305898a 안녕하세요
+  
+  
+  $git checkout - : 최신 커밋으로 돌아감 (commit 번호 7자리 혹은 풀번호를 적어줘도 됨)
